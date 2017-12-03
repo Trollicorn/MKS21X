@@ -23,7 +23,7 @@ public class CirculatingBook extends LibraryBook{
     	this.currentHolder = currentHolder;
     }
 
-    public void setDueDate(String setDueDate){
+    public void setDueDate(String dueDate){
     	this.dueDate = dueDate;
     }
 
