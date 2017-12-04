@@ -1,8 +1,19 @@
+import java.lang.IllegalArgumentException;
+
 public class Barcode implements Comparable<Barcode>{
     private String zip;
     private String[] guide; 
     
     public Barcode(String zip){
+	if (zip.length() != 5 ){
+	    throw new IllegalArgumentException();
+	}
+	try {
+	    Integer.parseInt(zip);
+	}
+	catch (NumberFormatException e){
+	    throw new IllegalArgumentException();
+	}
 	this.zip = zip; 
 	guide = new String[] {"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::" };
     }
@@ -42,5 +53,14 @@ public class Barcode implements Comparable<Barcode>{
     public int compareTo(Barcode other){
 	return Integer.parseInt(getZip()) - Integer.parseInt(other.getZip());
     }
+
+    public static String toCode(String zip){
+	Barcode temp = new Barcode(zip);
+	return temp.getCode();
+    }
+
+    //public static String toZip(String code){
+	
+    //    }
     
 }
