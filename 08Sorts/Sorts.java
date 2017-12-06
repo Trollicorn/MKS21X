@@ -25,13 +25,41 @@ public class Sorts{
 		}
 	}
 
+    public static void insertionSort(int[] data){
+	for (int i = 0; i < data.length; i++){
+	    for (int j = i; j > 0 && data[j] < data[j-1]; j--){
+		swap(data, j, j-1);
+	    }
+
+	}
+
+
+    }
+
+	private static void swap(int[] ary, int a, int b){
+	    int c = ary[a];
+	    ary[a] = ary[b];
+	    ary[b] = c;
+	}
+
+
+    
+
 	public static void main(String[] args){
-		int[] test = {64,25,12,22,11};
+		int[] test = new int[100000];
+		for (int i = 0; i < test.length; i++){
+		    test[i] = (int)(Math.random() * 100);
+		}
 		System.out.println( Arrays.toString(test)); 
 
-		System.out.println("Selection Sort");
+	/*	System.out.println("Selection Sort");
 		selectionSort(test);
+       	*/	System.out.println( Arrays.toString(test));
+       	
+		System.out.println("Insertion Sort");
+		insertionSort(test);
 		System.out.println( Arrays.toString(test));
+       
 	}
 
 
