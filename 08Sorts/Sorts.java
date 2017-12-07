@@ -46,7 +46,7 @@ public class Sorts{
     
 
 	public static void main(String[] args){
-		int[] test = new int[1000];
+		int[] test = new int[100000];
 		for (int i = 0; i < test.length; i++){
 		    test[i] = (int)(Math.random() * 100);
 		}
