@@ -1,11 +1,11 @@
 public class TemperatureConversion {
    
    public static double CtoF(double t){
-      return t * 1.8 + 32;
+       return (double)t * 1.8 + 32;
    }
    
    public static double FtoC(double t){
-      return (t - 32) / 1.8;
+       return ((double)t - 32) / 1.8;
    }
    
    public static void main(String[] args) {
