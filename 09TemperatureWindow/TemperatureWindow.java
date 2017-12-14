@@ -47,12 +47,14 @@ public class TemperatureWindow extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
 	double temp = 0.0;
+	boolean calculate = true; 
 	try{
 	    temp = Double.parseDouble(temperature.getText());
 	}catch(NumberFormatException n){
-	    output.setText("only a number");
+	    output.setText("enter a number");
+	    calculate = false;
 	}
-	if (output.getText().length() != 13){
+	if (calculate){
 	    if (bFtoC.isSelected()){
 		output.setText(""+TemperatureConversion.FtoC(temp));
 	    }else{
