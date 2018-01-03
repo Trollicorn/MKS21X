@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+
+
+
 public class OrderedSuperArray extends SuperArray{
 
 	public OrderedSuperArray(){
@@ -7,6 +11,13 @@ public class OrderedSuperArray extends SuperArray{
 	}
 	public OrderedSuperArray(int startingCapacity){
 		super(startingCapacity);
+	}
+
+	public OrderedSuperArray(String[] arr){
+		super(arr.length);
+		for (int i = 0; i < size(); i++){
+			add(arr[i]);
+		}
 	}
 
 	public String set(int index, String element){

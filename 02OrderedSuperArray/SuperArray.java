@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SuperArray{
 
 	private String[] data; 
@@ -12,6 +14,7 @@ public class SuperArray{
 		data = new String[startingCapacity];
 		size = 0;
 	}
+
 
 	public void clear(){
 		data = new String[10];
@@ -139,16 +142,15 @@ public class SuperArray{
 		return true;
 	}
 
-	public boolean equals(SuperArray other){
-		if (size() != other.size()){
-			return false;
-		}
-		for (int i = 0; i < size(); i++){
-			if (get(i) != other.get(i)){
-				return false;
+	public static boolean equals(SuperArray s, ArrayList<String> a){
+		if(s.size() == a.size()){
+			for(int i = 0; i < s.size(); i++){
+				if(s.get(i) != a.get(i)){
+					return false;
+				}
 			}
+			return true;
 		}
-		return true;
+		return false;
 	}
-
 }
