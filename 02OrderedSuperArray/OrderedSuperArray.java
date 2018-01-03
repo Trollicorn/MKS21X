@@ -15,7 +15,7 @@ public class OrderedSuperArray extends SuperArray{
 
 	public OrderedSuperArray(String[] arr){
 		super(arr.length);
-		for (int i = 0; i < size(); i++){
+		for (int i = 0; i < arr.length; i++){
 			add(arr[i]);
 		}
 	}
@@ -153,17 +153,27 @@ public class OrderedSuperArray extends SuperArray{
 				}
 			}
 
-
 		}catch(Exception f){
 			s2.add("0");
-    //f.printStackTrace();
+			f.printStackTrace();
 		}
 
 		Collections.sort(s2);
+
+
+	//	System.out.println(s1);
+	//	System.out.println(s2);
+
 		if(equals(s1,s2)){
 			System.out.println("Test "+testID+",PASS");
 		}else{
   			System.out.println("Test "+testID+",FAIL!");// "+s1+"!="+s2);
+  		}
+  	}
+
+  	public static void main(String[] args) {
+  		for (int i = 0; i < 8; i++){
+  			runTest02(i);
   		}
   	}
 

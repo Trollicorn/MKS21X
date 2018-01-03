@@ -107,13 +107,15 @@ public class SuperArray{
 
 
 	public void add(int index, String element){
-		if (index < 0 || index >= size()){
-			throw new IndexOutOfBoundsException();
-		} 
+		if (index != 0){
+			if (index < 0 || index > size()){
+				throw new IndexOutOfBoundsException();
+			} 
+		}
 		if (size >= data.length){
 			resize();
 		}
-		for (int i = size + 1; i > index; i--){
+		for (int i = size; i > index; i--){
 			data[i] = data[i-1];
 		}
 		data[index] = element;
