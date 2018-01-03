@@ -114,7 +114,7 @@ public class SuperArray{
 		if (size >= data.length){
 			resize();
 		}
-		for (int i = size + 1; i > index; i--){
+		for (int i = size; i > index; i--){
 			data[i] = data[i-1];
 		}
 		data[index] = element;
@@ -257,12 +257,12 @@ public class SuperArray{
 		}
 		catch(Exception f){
 			s2.add("0");
-    //f.printStackTrace();
+			f.printStackTrace();
 		}
 
 
-		System.out.println(s1);
-		System.out.println(s2);
+	//	System.out.println(s1);
+	//	System.out.println(s2);
 
 		if(equals(s1,s2)){
 			System.out.println("Test "+testID+",PASS");
