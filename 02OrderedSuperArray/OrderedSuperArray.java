@@ -146,7 +146,7 @@ public class OrderedSuperArray extends SuperArray{
 				s1.add("1");
 				s2.add("1");
 
-				for(int i = 0; i < 1000;   i ++){
+				for(int i = 0; i < 30;   i ++){
 					String v = ""+(int)(Math.random()*1000);
 					s1.add(v);
 					s2.add(v);
@@ -161,20 +161,24 @@ public class OrderedSuperArray extends SuperArray{
 		Collections.sort(s2);
 
 
+//		System.out.println(s1);
+//		System.out.println(s2);
+
 	//	System.out.println(s1);
 	//	System.out.println(s2);
 
 		if(equals(s1,s2)){
 			System.out.println("Test "+testID+",PASS");
 		}else{
-  			System.out.println("Test "+testID+",FAIL!");// "+s1+"!="+s2);
+  			System.out.println("Test "+testID+",FAIL!" + "+s1+"!="+s2");
   		}
   	}
 
   	public static void main(String[] args) {
-  		for (int i = 0; i < 8; i++){
+  	/*	for (int i = 0; i < 8; i++){
   			runTest02(i);
-  		}
+  		}*/
+  		runTest02(7);
   	}
 
 
